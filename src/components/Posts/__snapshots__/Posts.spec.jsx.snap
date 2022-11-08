@@ -16,8 +16,6 @@ exports[`<Posts /> should match snapshot 1`] = `
     >
       <h2>
         Title 1
-         
-        1
       </h2>
       <p>
         Body 1
@@ -36,8 +34,6 @@ exports[`<Posts /> should match snapshot 1`] = `
     >
       <h2>
         Title 2
-         
-        2
       </h2>
       <p>
         Body 2
@@ -56,8 +52,6 @@ exports[`<Posts /> should match snapshot 1`] = `
     >
       <h2>
         Title 3
-         
-        3
       </h2>
       <p>
         Body 3

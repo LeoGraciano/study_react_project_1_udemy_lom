@@ -1,14 +1,12 @@
-import { fireEvent, render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { render, screen } from '@testing-library/react';
 import { PostCard } from '.';
 import { postCardPropsMock } from './mock';
 
-const props = postCardPropsMock
+const props = postCardPropsMock;
 
 describe('<PostCard />', () => {
-
   it('should render PostCard correctly', () => {
-    expect.assertions(4)
+    expect.assertions(4);
     // const { debug } = render(<PostCard {...props} />);
     // debug();
     render(<PostCard {...props} />);
@@ -19,6 +17,6 @@ describe('<PostCard />', () => {
   });
   it('should match snapshot', () => {
     const { container } = render(<PostCard {...props} />);
-    expect(container.firstChild).toMatchSnapshot()
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
