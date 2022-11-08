@@ -16,9 +16,7 @@ export const Home = () => {
   const noMorePosts = page + postsPerPage >= allPosts.length;
 
   const filteredPosts = searchValue
-    ? allPosts.filter((post) => {
-        return post.title.toLowerCase().includes(searchValue.toLowerCase());
-      })
+    ? allPosts.filter((post) => post.title.toLowerCase().includes(searchValue.toLowerCase()))
     : posts;
 
   const handleLoadPosts = async () => {
