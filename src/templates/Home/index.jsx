@@ -19,12 +19,12 @@ export const Home = () => {
     ? allPosts.filter((post) => post.title.toLowerCase().includes(searchValue.toLowerCase()))
     : posts;
 
-  const handleLoadPosts = async () => {
-    const postsAndPhotos = await loadPosts();
+  // const handleLoadPosts = useCallback(async (page, postsPerPage) => {
+  //   const postsAndPhotos = await loadPosts();
 
-    setPosts(postsAndPhotos.slice(page, postsPerPage));
-    setAllPosts(postsAndPhotos);
-  };
+  //   setPosts(postsAndPhotos.slice(page, postsPerPage));
+  //   setAllPosts(postsAndPhotos);
+  // });
 
   const handleLoadMorePosts = () => {
     const nextPage = page + postsPerPage;
@@ -41,9 +41,16 @@ export const Home = () => {
   };
 
   useEffect(() => {
+    async function handleLoadPosts(page, postsPerPage) {
+      const postsAndPhotos = await loadPosts();
+
+      setPosts(postsAndPhotos.slice(page, postsPerPage));
+      setAllPosts(postsAndPhotos);
+    }
+
     console.log(new Date().toLocaleString('pt-br'));
-    handleLoadPosts();
-  }, []);
+    handleLoadPosts(0, postsPerPage);
+  }, [postsPerPage]);
 
   return (
     <section className="container">
